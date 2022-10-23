@@ -91,7 +91,7 @@ crow.ui = {
 crow.menu = {
     Animbreaker     = crow.ui.Misc:switch(crow.funs.gradient_text(50,245,215,255,75,85,240,255,"Animbreaker"), false);
     Leg_Fucker      = crow.ui.Misc:switch("Leg Fucker", false);
-    Static_Lag      = crow.ui.Misc:switch("Static Lag in Air", false);
+    Static_Leg      = crow.ui.Misc:switch("Static Leg in Air", false);
     Pitch0          = crow.ui.Misc:switch("0 Pitch on Land", false);
 }
 
@@ -124,7 +124,7 @@ crow.callback_on_createmove = function(cmd)
             crow.funs.Animbreaker(crow.variables.me_index, 0, -180, -179)
         end
 
-        if crow.menu.Static_Lag:get() and not on_land then
+        if crow.menu.Static_Leg:get() and not on_land then
             crow.funs.Animbreaker(crow.variables.me_index, 6, 0.9, 1)
         end
 
@@ -145,7 +145,7 @@ crow.callback_on_render = function()
     local Animbreaker = crow.menu.Animbreaker:get()
 
     crow.menu.Leg_Fucker:set_visible(Animbreaker)
-    crow.menu.Static_Lag:set_visible(Animbreaker)
+    crow.menu.Static_Leg:set_visible(Animbreaker)
     crow.menu.Pitch0:set_visible(Animbreaker)
 
 end -- render end
